@@ -1,4 +1,4 @@
-package pl.mkorcz.quizzApp;
+package pl.mkorcz.quizApp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

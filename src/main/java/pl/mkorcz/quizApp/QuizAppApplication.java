@@ -1,13 +1,13 @@
-package pl.mkorcz.quizzApp;
+package pl.mkorcz.quizApp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class QuizzAppApplication {
+public class QuizAppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(QuizzAppApplication.class, args);
+		SpringApplication.run(QuizAppApplication.class, args);
 	}
 
 }
