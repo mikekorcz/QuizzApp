@@ -1,3 +1,7 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
 {
     margin: 0;
     padding: 0;
@@ -8,3 +12,37 @@ body {
     width: 100%;
     overflow-x: hidden;
 }
+.ml-2 {
+    margin-left: 10px;
+}
+.mr-2 {
+    margin-right: 10px;
+}
+footer {
+    background-color: #212529;
+    color: #ffffff;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+.image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.text-box {
+    text-align: center;
+    align: center;
+    max-width 300px;
+}
+.text-box, p {
+    color: #ffffff;
+}
+h1  {
+    color: #000000;
+}
+
