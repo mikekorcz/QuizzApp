@@ -16,9 +16,10 @@
     <img th:src="@{/images/quiz.png}" alt="java quiz" class="image mt-5">
     <div class="text-box">
         <h1 class="mb-5 text-center">Hello, this Java Quiz!</h1>
-        <form class="card bg-dark py-4 px-4">
+        <form class="card bg-dark py-4 px-4" action="/quiz" method="POST">
             <p>Enter your Name</p>
             <input type="text" name="username" />
+            <p class="text-danger" th:if="${warning}" th:text="${warning}"></p>
             <button type="submit" class="btn btn-warning">Start Quiz</button>
         </form>
     </div>
