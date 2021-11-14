@@ -12,39 +12,47 @@
 
 
 <!-- Container -->
-<div class="container-fluid">
+<div class="container">
     <h1 class="mb-5 text-center">List of all questions</h1>
+
 
     <div th:if="${message}" class="alert-success" role="alert">
         <p th:text="${message}">success message</p>
     </div>
 
-    <table class="table">
-        <thead class="thead-dark">
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Title</th>
-            <th scope="col">OptionA</th>
-            <th scope="col">OptionB</th>
-            <th scope="col">OptionC</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="question : ${listquestion}">
-            <td th:text="${question.id}">Question ID</td>
-            <td th:text="${question.title}">Title</td>
-            <td th:text="${question.optionA}">optionA</td>
-            <td th:text="${question.optionB}">optionB</td>
-            <td th:text="${question.optionC}">optionC</td>
-
-            <td>
-                <a th:href="@{'/edit/' + ${question.id}}">Edit</a>
-                <p>.....</p>
-                <a th:href="@{'/delete/' + ${question.id}}">Delete</a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">OptionA</th>
+                    <th scope="col">OptionB</th>
+                    <th scope="col">OptionC</th>
+                    <th scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="question : ${listquestion}">
+                    <th th:text="${question.id}">Question ID</th>
+                    <td th:text="${question.title}">Title</td>
+                    <td th:text="${question.optionA}">optionA</td>
+                    <td th:text="${question.optionB}">optionB</td>
+                    <td th:text="${question.optionC}">optionC</td>
+                    <td>
+                        <button type="button" class="btn btn-success mb-1"><a class="btn btn-success"
+                                                                         th:href="@{'/edit/' + ${question.id}}">Edit</a>
+                        </button>
+                        <button type="button" class="btn btn-danger mb-1"><a class="btn btn-danger"
+                                                                        th:href="@{'/delete/' + ${question.id}}">Delete</a>
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 
 </div>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org" xmlns:text-align="http://www.w3.org/1999/xhtml">
 <head th:replace="fragments.html :: head">
 
     <title id="pageTitle">Show Questions</title>
@@ -12,50 +12,56 @@
 
 
 <!-- Container -->
-<div class="container-fluid">
+<div class="container">
     <h1 class="mb-5 text-center">New Question</h1>
 
-    <form action="#" th:action="@{/save}" th:object="${question}" method="POST">
-        <table class="table">
-            <thead class="thead-dark">
-            <tr>
-                <th scope="col">Question</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Title</td>
-                <td><input type="text" th:field="*{title}"/>
-                </td>
-            </tr>
-            <tr>
-                <td>OptionA</td>
-                <td><input type="text" th:field="*{optionA}"/>
-                </td>
-            </tr>
-            <tr>
-                <td>OptionB</td>
-                <td><input type="text" th:field="*{optionB}"/>
-                </td>
-            </tr>
-            <tr>
-                <td>OptionC</td>
-                <td><input type="text" th:field="*{optionC}"/>
-                </td>
-            </tr>
-            <tr>
-                <td>Type correct answer (0-2)</td>
-                <td><input type="text" th:field="*{answer}"/>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <button type="submit">Save</button>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </form>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <form action="#" th:action="@{/save}" th:object="${question}" method="POST">
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th class="text-center" colspan="2" scope="col">Question</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Title</td>
+                        <td><input type="text" th:field="*{title}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>OptionA</td>
+                        <td><input type="text" th:field="*{optionA}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>OptionB</td>
+                        <td><input type="text" th:field="*{optionB}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>OptionC</td>
+                        <td><input type="text" th:field="*{optionC}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Type correct answer (0-2)</td>
+                        <td><input type="text" th:field="*{answer}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="d-flex justify-content-end">
+                                <button type="submit" class="btn btn-success">Save</button>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
 
 
 </div>

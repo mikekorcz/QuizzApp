@@ -12,7 +12,7 @@
 
 
 <!-- Container -->
-<div class="container-fluid">
+<div class="container">
     <img th:src="@{/images/quiz.png}" alt="java quiz" class="image mt-5">
     <div class="text-box">
         <h1 class="mb-5 text-center">Hello, this Java Quiz!</h1>
@@ -20,7 +20,7 @@
             <p>Enter your Name</p>
             <input type="text" name="username" />
             <p class="text-danger" th:if="${warning}" th:text="${warning}"></p>
-            <button type="submit" class="btn btn-warning">Start Quiz</button>
+            <button type="submit" class="btn btn-primary">Start Quiz</button>
         </form>
     </div>
 </div>
