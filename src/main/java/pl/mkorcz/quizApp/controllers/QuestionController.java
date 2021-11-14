@@ -15,6 +15,8 @@ public class QuestionController {
     @Autowired
     QuestionService questionService;
 
+
+
     @GetMapping("/new_question")
     public String newQuestion(Model model) {
         Question question = new Question();

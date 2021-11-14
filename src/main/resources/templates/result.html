@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments.html :: head">
+
+    <title id="pageTitle">Result Page</title>
+</head>
+<body>
+
+<!-- importing NAVBAR -->
+<div th:replace="fragments.html :: navbar"></div>
+
+
+<!-- Container -->
+<div class="container">
+
+    <h1 class="mb-5 text-center">Result!</h1>
+
+</div>
+
+<!-- Footer -->
+<div th:insert="fragments.html :: footer"></div>
+
+<div th:replace="fragments.html :: js"></div>
+</body>
+</html>

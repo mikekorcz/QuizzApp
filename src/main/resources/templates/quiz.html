@@ -12,15 +12,36 @@
 
 
 <!-- Container -->
-<div class="container-fluid">
+<div class="container mb-5">
     <h1 class="bg-danger">Select only the one correct answer</h1>
-    <form action="submit" method="POST">
-        <div class="quest-box bg-dark">
 
+    <form action="submit" method="POST" th:object="${questionForm}">
+        <div class="quest-box bg-dark" th:each="questions, i : ${questionForm.questions}">
+            <p class="title" th:text="${questions.title}"></p>
+
+            <div class="option">
+                <input type="radio" th:name="|questions[${i.index}].choice|" th:value="1">
+                <p th:text="${questions.optionA}"></p>
+            </div>
+            <div class="option">
+                <input type="radio" th:name="|questions[${i.index}].choice|" th:value="2">
+                <p th:text="${questions.optionB}"></p>
+            </div>
+            <div class="option">
+                <input type="radio" th:name="|questions[${i.index}].choice|" th:value="3">
+                <p th:text="${questions.optionC}"></p>
+            </div>
+
+            <input type="hidden" th:name="|questions[${i.index}].id|" th:value="${questions.id}">
+            <input type="hidden" th:name="|questions[${i.index}].title|" th:value="${questions.title}">
+            <input type="hidden" th:name="|questions[${i.index}].answer|" th:value="${questions.answer}">
         </div>
+
+        <button type="submit" class="btn btn-warning d-block max-auto mt-4">Submit Answer</button>
     </form>
 </div>
 
+<div class="clear"></div>
 <!-- Footer -->
 <div th:insert="fragments.html :: footer"></div>
 
