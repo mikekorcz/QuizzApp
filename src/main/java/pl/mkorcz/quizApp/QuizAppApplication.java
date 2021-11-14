@@ -11,23 +11,20 @@ import pl.mkorcz.quizApp.repository.QuestionRepository;
 @SpringBootApplication
 public class QuizAppApplication {
 
-	@Autowired
-	QuestionRepository questionRepository;
+//	@Autowired
+//	QuestionRepository questionRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(QuizAppApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner commandLineRunner() {
-
-		return args -> {
-			Question question1 =new Question(1, "Title", "optionA", "optionB", "optionC", 2, 3);
-
-			questionRepository.save(question1);
-		};
-
-
-
-	}
+//	@Bean
+//	CommandLineRunner commandLineRunner() {
+//
+//		return args -> {
+//			Question question1 =new Question(1, "Title", "optionA", "optionB", "optionC", 2, 3);
+//
+//			questionRepository.save(question1);
+//		};
+//	}
 }

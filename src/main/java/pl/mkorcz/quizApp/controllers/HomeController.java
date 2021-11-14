@@ -21,7 +21,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String home() {
-        return "index.html";
+        return "index";
     }
 
     @GetMapping("/show_questions")
@@ -29,13 +29,6 @@ public class HomeController {
         List<Question> questionList = questionService.listAll();
         model.addAttribute("listquestion", questionList);
         return "show_questions";
-    }
-
-    @GetMapping("/new_question")
-    public String newQuestion(Model model) {
-        Question question = new Question();
-        model.addAttribute("question", question);
-        return "new_question";
     }
 
     @PostMapping("/quiz")
@@ -46,12 +39,4 @@ public class HomeController {
         }
         return "quiz.html";
     }
-
-    @PostMapping("/save")
-    public String saveQuestion(@ModelAttribute("question")Question question) {
-        questionService.saveQuestion(question);
-        return "redirect:";
-    }
-
-
 }
