@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments.html :: head">
+
+    <title id="pageTitle">Show Questions</title>
+</head>
+<body>
+
+<!-- importing NAVBAR -->
+<div th:replace="fragments.html :: navbar"></div>
+
+
+<!-- Container -->
+<div class="container-fluid">
+    <h1 class="mb-5 text-center">New Question</h1>
+
+    <form action="#" th:action="@{/save}" th:object="${question}" method="POST">
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Question</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Title</td>
+                <td><input type="text" th:field="*{title}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>OptionA</td>
+                <td><input type="text" th:field="*{optionA}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>OptionB</td>
+                <td><input type="text" th:field="*{optionB}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>OptionC</td>
+                <td><input type="text" th:field="*{optionC}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Type correct answer (0-2)</td>
+                <td><input type="text" th:field="*{answer}"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">Save</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+
+
+</div>
+
+<!-- Footer -->
+<div th:insert="fragments.html :: footer"></div>
+
+<div th:replace="fragments.html :: js"></div>
+</body>
+</html>

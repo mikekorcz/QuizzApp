@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments.html :: head">
+
+    <title id="pageTitle">Show Questions</title>
+</head>
+<body>
+
+<!-- importing NAVBAR -->
+<div th:replace="fragments.html :: navbar"></div>
+
+
+<!-- Container -->
+<div class="container-fluid">
+    <h1 class="mb-5 text-center">List of all questions</h1>
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Question</th>
+            <th scope="col">OptionA</th>
+            <th scope="col">OptionB</th>
+            <th scope="col">OptionC</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="question : ${listquestion}">
+            <td th:text="${question.id}">Question ID</td>
+            <td th:text="${question.optionA}">optionA</td>
+            <td th:text="${question.optionB}">optionB</td>
+            <td th:text="${question.optionC}">optionC</td>
+
+            <td>
+                <a th:href="@{'/edit/' + ${question.id}}">Edit</a>
+                <p>.....</p>
+                <a th:href="@{'/delete/' + ${question.id}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+
+<!-- Footer -->
+<div th:insert="fragments.html :: footer"></div>
+
+<div th:replace="fragments.html :: js"></div>
+</body>
+</html>
