@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments.html :: head">
+
+    <title id="pageTitle">Show Questions</title>
+</head>
+<body>
+
+<!-- importing NAVBAR -->
+<div th:replace="fragments.html :: navbar"></div>
+
+
+<!-- Container -->
+<div class="container">
+    <h3>Top Scorers</h3>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Score</th>
+        </tr>
+        <tr th:each="score : ${scoreList}">
+            <td th:text="${score.username}">Name</td>
+            <td th:text="${score.totalCorrect}">Score</td>
+        </tr>
+    </table>
+
+</div>
+
+<!-- Footer -->
+<div th:insert="fragments.html :: footer"></div>
+
+<div th:replace="fragments.html :: js"></div>
+</body>
+</html>

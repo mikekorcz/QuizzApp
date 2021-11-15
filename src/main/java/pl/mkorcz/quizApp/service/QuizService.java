@@ -1,7 +1,9 @@
 package pl.mkorcz.quizApp.service;
 
+import net.bytebuddy.TypeCache;
 import net.bytebuddy.implementation.auxiliary.AuxiliaryType;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import pl.mkorcz.quizApp.model.Question;
 import pl.mkorcz.quizApp.model.QuestionForm;
@@ -52,5 +54,18 @@ public class QuizService {
                 correct++;
         }
         return correct;
+    }
+
+    public void saveScore(Result result) {
+        Result saveResult = new Result();
+        saveResult.setUsername(result.getUsername());
+        saveResult.setTotalCorrect(result.getTotalCorrect());
+        resultRepository.save(saveResult);
+    }
+
+    public List<Result> getTopScore() {
+        List<Result> sList = resultRepository.findAll(Sort.by(Sort.Direction.DESC, "totalCorrect"));
+
+        return sList;
     }
 }

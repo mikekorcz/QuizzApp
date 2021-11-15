@@ -64,7 +64,16 @@ public class HomeController {
     public String submit(@ModelAttribute QuestionForm questionForm, Model model) {
         if (!submitted) {
             result.setTotalCorrect(quizService.getResult(questionForm));
+            quizService.saveScore(result);
+            submitted = true;
         }
-        return "/result.html";
+        return "result.html";
+    }
+
+    @GetMapping("/score")
+    public String score(Model model) {
+        List<Result> scoreList= quizService.getTopScore();
+        model.addAttribute("scoreList", scoreList);
+        return "scoreboard.html";
     }
 }
